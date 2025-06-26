@@ -29,11 +29,3 @@ This project demonstrates a full-stack solution for predictive maintenance using
 ---
 
 ## 📊 Architecture
-
-```mermaid
-graph TD
-  A[Sensor Data Simulation] --> B[Azure IoT Hub]
-  B --> C[Azure Blob Storage]
-  C --> D[Azure ML Pipeline (AutoML)]
-  D --> E[Model Deployment (AKS)]
-  E --> F[Power BI Dashboard]
