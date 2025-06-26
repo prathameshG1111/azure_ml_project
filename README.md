@@ -29,4 +29,4 @@ This project demonstrates a full-stack solution for predictive maintenance using
 ---
 
 ## 📊 Architecture
-![Predictive Maintenance Architecture](docs/architecture.png)
+![Predictive Maintenance Architecture](docs/architecture.png.png)
