@@ -1,0 +1,5 @@
+# Install Azure CLI (download and install manually)
+az version                        # ✅ Verify CLI
+az login                          # 🔐 Login to your Azure account
+az extension add -n ml -y         # ➕ Add ML extension
+az ml workspace list              # 🔍 Test ML command
