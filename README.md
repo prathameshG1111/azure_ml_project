@@ -19,7 +19,6 @@ This project demonstrates a full-stack solution for predictive maintenance using
 
 ## 🛠️ Tech Stack
 
-- **Azure IoT Hub** – for ingesting simulated sensor telemetry  
 - **Azure Blob Storage** – storing historical data  
 - **Azure ML Studio** – model training using AutoML  
 - **Python** – for data prep, EDA, and scripts  
