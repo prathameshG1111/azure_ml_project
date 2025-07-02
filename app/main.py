@@ -1,3 +1,4 @@
+# app/main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
@@ -5,23 +6,43 @@ import numpy as np
 
 app = FastAPI()
 
-# Load model
-model = joblib.load("model.pkl")
+# ✅ Update model path
+model = joblib.load("app/model.pkl")
 
-# Define input schema
-class InputData(BaseModel):
+# ✅ Complete feature set used by your trained model
+class SensorInput(BaseModel):
     cycle: int
+    op_setting_1: float
+    op_setting_2: float
+    op_setting_3: float
     sensor_1: float
     sensor_2: float
     sensor_3: float
-    # Add all features used by your model
+    sensor_4: float
+    sensor_5: float
+    sensor_6: float
+    sensor_7: float
+    sensor_8: float
+    sensor_9: float
+    sensor_10: float
+    sensor_11: float
+    sensor_12: float
+    sensor_13: float
+    sensor_14: float
+    sensor_15: float
+    sensor_16: float
+    sensor_17: float
+    sensor_18: float
+    sensor_19: float
+    sensor_20: float
+    sensor_21: float
 
 @app.get("/")
-def read_root():
-    return {"msg": "Predictive Maintenance API is live!"}
+def home():
+    return {"message": "✅ Predictive Maintenance API is live!"}
 
 @app.post("/predict")
-def predict(data: InputData):
-    input_array = np.array([[data.cycle, data.sensor_1, data.sensor_2, data.sensor_3]])
-    prediction = model.predict(input_array)[0]
-    return {"prediction": int(prediction)}
+def predict(data: SensorInput):
+    features = np.array([list(data.dict().values())])
+    prediction = model.predict(features)
+    return {"predicted_label": int(prediction[0])}
