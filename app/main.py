@@ -7,7 +7,7 @@ import numpy as np
 app = FastAPI()
 
 # ✅ Update model path
-model = joblib.load("app/model_clean.pkl")
+model = joblib.load("app/model.pkl")
 
 # ✅ Complete feature set used by your trained model
 class SensorInput(BaseModel):
