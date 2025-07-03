@@ -6,3 +6,4 @@ pydantic
 numpy
 lightgbm
 scikit-learn==1.7.0
+gunicorn
